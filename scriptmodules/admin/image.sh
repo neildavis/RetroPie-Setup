@@ -114,13 +114,13 @@ function install_rp_image() {
     fi
     iniSet "overscan_scale" 1
 
-    [[ -z "$__chroot_branch" ]] && __chroot_branch="master"
+    [[ -z "$__chroot_branch" ]] && __chroot_branch="dev-nd"
     cat > "$chroot/home/pi/install.sh" <<_EOF_
 #!/bin/bash
 cd
 sudo apt-get update
 sudo apt-get -y install git dialog xmlstarlet joystick
-git clone -b "$__chroot_branch" https://github.com/RetroPie/RetroPie-Setup.git
+git clone -b "$__chroot_branch" https://github.com/neildavis/RetroPie-Setup.git
 cd RetroPie-Setup
 modules=(
     'raspbiantools apt_upgrade'
